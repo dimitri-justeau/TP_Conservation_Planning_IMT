@@ -89,8 +89,10 @@ public class ConservationPlanningModel {
     }
 
     public Solution solveStep3() {
-        // TODO
-        return null;
+        for (IntVar s : species) {
+            model.arithm(s, ">=", 1).post();
+        }
+        return model.getSolver().findOptimalSolution(nbPUs, false);
     }
 
     public Solution solveStep4() {
