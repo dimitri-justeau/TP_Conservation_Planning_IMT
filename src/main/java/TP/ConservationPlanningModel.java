@@ -55,16 +55,29 @@ public class ConservationPlanningModel {
     }
 
     public void initVariables() {
-        // TODO
-    }
+        selected = model.boolVarArray("PUs", Data.N);
+        nbPUs = model.intVar("NbPUs", 0, Data.N);
+        occTreeA = model.intVar(0, Data.NB_OCC_TREE_A);
+        occTreeB = model.intVar(0, Data.NB_OCC_TREE_B);
+        occTreeC = model.intVar(0, Data.NB_OCC_TREE_C);
+        occTreeD = model.intVar(0, Data.NB_OCC_TREE_D);
+        occFern = model.intVar(0, Data.NB_OCC_FERN);
+        occBird = model.intVar(0, Data.NB_OCC_BIRD);
+        occGecko = model.intVar(0, Data.NB_OCC_GECKO);    }
 
     public void postBaseModelConstraint() {
-        // TODO
+        model.sum(selected, "=", nbPUs).post();
+        model.scalar(selected, Data.OCC_TREE_A, "=", occTreeA).post();
+        model.scalar(selected, Data.OCC_TREE_B, "=", occTreeB).post();
+        model.scalar(selected, Data.OCC_TREE_C, "=", occTreeC).post();
+        model.scalar(selected, Data.OCC_TREE_D, "=", occTreeD).post();
+        model.scalar(selected, Data.OCC_FERN, "=", occFern).post();
+        model.scalar(selected, Data.OCC_BIRD, "=", occBird).post();
+        model.scalar(selected, Data.OCC_GECKO, "=", occGecko).post();
     }
 
     public Solution solveStep1() {
-        // TODO
-        return null;
+        return model.getSolver().findSolution();
     }
 
     public Solution solveStep2() {
