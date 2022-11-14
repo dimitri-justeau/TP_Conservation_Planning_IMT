@@ -32,21 +32,43 @@ Dans cette étape, l'objectif est de construire le modèle de base, c'est à un 
 solution à notre problème permet bien de sélectionner une aire protégée, et que dans cette aire nous pouvons
 contrôler le nombre d'espèces présente dans l'aire protégée.
 
+Ici vous devez implémenter:
+
+- `public void initVariables()`
+- `public void postBaseModelConstraint()`
+- `public Solution solveStep1()`
+
 ### Etape 2
 
 Dans cette étape, nous enrichissons notre modèle de base pour identifier une aire protégée qui permet de couvrir toutes les
 espèces.
 
+Ici vous devez implémenter:
+
+- `public Solution solveStep2()`
+
 ### Etape 3
 
 Dans cette étape, nous cherchons à identifier une aire protégée qui couvre toutes les espèces, à coût minimal (ici le coût correspond à la surface).
+
+Ici vous devez implémenter:
+
+- `public Solution solveStep3()`
 
 ### Etape 4
 
 Dans cette étape, nous cherchons à identifier une aire protégée qui couvre toutes les espèces, à coût minimal, et pour laquelle on doit
 avoir au moins 2 occurrences pour les deux espèces animales.
 
+Ici vous devez implémenter:
+
+- `public Solution solveStep4()`
+
 ### Etape 5
 
 Finalement, nous cherchons à identifier une aire protégée qui respecte les même critères qu'à l'étape 4, mais cette fois-ci
 l'aire protégée doit être connectée.
+
+Ici vous devez implémenter:
+
+- `public Solution solveStep5()`
