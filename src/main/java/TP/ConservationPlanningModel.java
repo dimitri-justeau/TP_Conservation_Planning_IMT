@@ -63,7 +63,8 @@ public class ConservationPlanningModel {
         occTreeD = model.intVar(0, Data.NB_OCC_TREE_D);
         occFern = model.intVar(0, Data.NB_OCC_FERN);
         occBird = model.intVar(0, Data.NB_OCC_BIRD);
-        occGecko = model.intVar(0, Data.NB_OCC_GECKO);    }
+        occGecko = model.intVar(0, Data.NB_OCC_GECKO);
+    }
 
     public void postBaseModelConstraint() {
         model.sum(selected, "=", nbPUs).post();
