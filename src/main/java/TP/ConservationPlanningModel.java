@@ -106,8 +106,15 @@ public class ConservationPlanningModel {
     }
 
     public Solution solveStep5() {
-        // TODO
-        return null;
+        for (IntVar s : plantSpecies) {
+            model.arithm(s, ">=", 1).post();
+        }
+        for (IntVar s : animalSpecies) {
+            model.arithm(s, ">=", 2).post();
+        }
+        UndirectedGraphVar g = makeGraphVar();
+        model.connected(g).post();
+        return model.getSolver().findOptimalSolution(nbPUs, false);
     }
 
     public void printSolution(Solution s) {
