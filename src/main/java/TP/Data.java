@@ -103,7 +103,7 @@ public class Data {
     public static final int NB_OCC_TREE_B = Arrays.stream(Data.OCC_TREE_B).sum();
     public static final int NB_OCC_TREE_C = Arrays.stream(Data.OCC_TREE_C).sum();
     public static final int NB_OCC_TREE_D = Arrays.stream(Data.OCC_TREE_D).sum();
-    public static final int NB_OCC_FERN = Arrays.stream(Data.OCC_TREE_D).sum();
+    public static final int NB_OCC_FERN = Arrays.stream(Data.OCC_FERN).sum();
 
     public static final int NB_OCC_BIRD = Arrays.stream(Data.OCC_BIRD).sum();
     public static final int NB_OCC_GECKO = Arrays.stream(Data.OCC_GECKO).sum();
